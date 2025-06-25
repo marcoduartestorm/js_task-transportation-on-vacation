@@ -3,15 +3,20 @@
  *
  * @return {number}
  */
+
 function calculateRentalCost(days) {
+  const SHORT_TERM = 3;
+  const SHORT_TERM_DISCOUNT = 20;
+  const LONG_TERM = 7;
+  const LONG_TERM_DISCOUNT = 50;
   let cost = 40 * days;
 
-  if (days < 3) {
+  if (days < SHORT_TERM) {
     // nothing to do
-  } else if (days >= 3 && days < 7) {
-      cost -= 20;
+  } else if (days >= SHORT_TERM && days < LONG_TERM) {
+      cost -= SHORT_TERM_DISCOUNT;
   } else {
-      cost -= 50;
+      cost -= LONG_TERM_DISCOUNT;
   }
 
   return cost;
